@@ -40,6 +40,44 @@
         }
     </style>
     <script src="js/vendor/modernizr-2.8.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    
+    
+
+    <script type="text/javascript">
+	    function initialize() {
+	        var myLatlng = new google.maps.LatLng(40.728157, -74.077642);
+	        var mapOptions = {
+	            zoom: 15,
+	            scrollwheel: false,
+	            center: myLatlng,
+	            mapTypeId: google.maps.MapTypeId.ROADMAP
+	        }
+	        var map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
+
+	        var marker = new google.maps.Marker({
+	            position: myLatlng,
+	            map: map,
+	            animation: google.maps.Animation.DROP,
+	            title: 'Hello World!'
+	        });
+
+	        var contentString = '' +
+	                '' +
+	                '';
+
+	        var infowindow = new google.maps.InfoWindow({
+	            content: contentString
+	        });
+
+	        google.maps.event.addListener(marker, 'click', function () {
+	            infowindow.open(map, marker);
+	        });
+	    }
+
+	    google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+
     <!-- HTML5 Shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,7 +90,7 @@
 
 
 <body>
-    neto baitola
+   
     <div id="st-container" class="st-container">
         <div class="st-pusher">
             <div class="st-content">
@@ -78,7 +116,7 @@
                                     <ul class="nav navbar-nav navbar-right">
                                         <li class="active"><a href="index.html">Home</a></li>
 
-                                        <li class="dropdown"><a href="#">About <b class="caret"></b></a>
+                                        <li class="dropdown" style="display: none;"><a href="#">About <b class="caret"></b></a>
                                             <!-- submenu-wrapper -->
                                             <div class="submenu-wrapper submenu-wrapper-topbottom">
                                                 <div class="submenu-inner  submenu-inner-topbottom">
@@ -92,7 +130,7 @@
                                             <!-- /.submenu-wrapper -->
                                         </li>
 
-                                        <li class="dropdown"><a href="#">Blog <b class="caret"></b></a>
+                                        <li class="dropdown" style="display: none;"><a href="#">Blog <b class="caret"></b></a>
                                             <!-- submenu-wrapper -->
                                             <div class="submenu-wrapper submenu-wrapper-topbottom">
                                                 <div class="submenu-inner  submenu-inner-topbottom">
@@ -106,7 +144,7 @@
                                             <!-- /.submenu-wrapper -->
                                         </li>
 
-                                        <li class="dropdown"><a href="#">Portfolio <b class="caret"></b></a>
+                                        <li class="dropdown" style="display: none;"><a href="#">Portfolio <b class="caret"></b></a>
                                             <!-- submenu-wrapper -->
                                             <div class="submenu-wrapper submenu-wrapper-topbottom">
                                                 <div class="submenu-inner  submenu-inner-topbottom">
@@ -122,7 +160,7 @@
                                         </li>
 
 
-                                        <li class="dropdown"><a href="#">Pages <b class="caret"></b></a>
+                                        <li class="dropdown" style="display: none;"><a href="#">Pages <b class="caret"></b></a>
                                             <!-- submenu-wrapper -->
                                             <div class="submenu-wrapper submenu-wrapper-topbottom">
                                                 <div class="submenu-inner  submenu-inner-topbottom">
@@ -137,7 +175,7 @@
                                             </div>
                                             <!-- /.submenu-wrapper -->
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li style="display: none;"><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>
                                 <!-- /.navbar-collapse -->
@@ -160,7 +198,7 @@
                                 <img src="img/slider-bg1.png" alt="Hero Slide">
                                 <!--Slide Image-->
 
-                                <div class="container">
+                                <div class="container" style="display: none;">
                                     <div class="carousel-caption">
                                         <small class="animated fadeIn">CALL US TODAY</small>
                                         <div class="phone animated lightSpeedIn">1-800-1234-567</div>
@@ -209,10 +247,61 @@
                     </div>
                     <!-- #x-corp-carousel-->
 
+                    <section class="about-us-slider-wrapper">
+                        <div id="about-us-slider" class="carousel slide" data-ride="carousel">
+                          <!-- Wrapper for slides -->
+                          <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img class="img-responsive" src="img/abt-slider1.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="abt-slider-intro">
+                                            <p>O escritório RIBEIRO CASTRO, situado na cidade do Ruy Barbosa-Ba, mas com atuação em todo o território da Bahia, assume um compromisso de clareza, transparência e defesa intransigente de cada caso, bem como uma atitude de respeito perante todos os intervenientes da justiça.</p>
 
-                    <div class="container">
+                                            <p>Prazer, Sou Tiana Ribeiro. Advogada OAB/BA 33.864. Prazer, Sou Katarine Castro. Advogada OAB/BA 33.864    </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.item -->
+
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img class="img-responsive" src="img/abt-slider2.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="abt-slider-intro">
+                                            <p>O escritório RIBEIRO CASTRO, situado na cidade do Ruy Barbosa-Ba, mas com atuação em todo o território da Bahia, assume um compromisso de clareza, transparência e defesa intransigente de cada caso, bem como uma atitude de respeito perante todos os intervenientes da justiça.</p>
+
+                                            <p>Seamlessly plagiarize professional deliverables before enterprise-wide leadership. Authoritatively transition open-source solutions for client-centered leadership skills.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.item -->
+                          </div><!-- /.carousel-inner -->
+
+                          <!-- Controls -->
+                          <a class="left carousel-control" href="#about-us-slider" role="button" data-slide="prev">
+                            <i class="flaticon-arrowhead4"></i>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="right carousel-control" href="#about-us-slider" role="button" data-slide="next">
+                            <i class="flaticon-arrow437"></i>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                    </section>
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                    <div class="container" >
                         <div class="content-wrapper">
-                            <section class="intro-wrapper">
+                            <section class="intro-wrapper" style="display: none;">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-8">
                                         <h2 class="wow fadeInDown">Welcome to Primex</h2>
@@ -237,7 +326,7 @@
 
 
                             <section class="service-wrapper">
-                                <h2 class="section-title wow fadeInDown">Our Services</h2>
+                                <h2 class="section-title wow fadeInDown">Áreas de Atuação</h2>
                                 <div class="row">
                                     <div class="col-md-6 wow fadeInRight">
                                         <div class="media">
@@ -245,8 +334,8 @@
                                                 <span class="icon bg1 flaticon-increasing5"></span>
                                             </a>
                                             <div class="media-body">
-                                                <h3 class="media-heading"><a href="#">Global business</a></h3>
-                                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                                                <h3 class="media-heading"><a href="#">Direito civil</a></h3>
+                                                <p>Direito civil é um ramo do Direito que trata do conjunto de normas reguladoras dos direitos e obrigações de ordem privada concernente às pessoas, aos seus direitos e obrigações, aos bens e às suas relações, enquanto membros da sociedade.</p>
                                             </div>
                                             <!-- /.media-body -->
                                         </div>
@@ -260,8 +349,8 @@
                                                 <span class="icon bg2 flaticon-syncing"></span>
                                             </a>
                                             <div class="media-body">
-                                                <h3 class="media-heading"><a href="#">Fast online support</a></h3>
-                                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                                                <h3 class="media-heading"><a href="#">Direito Empresarial</a></h3>
+                                                <p>Referido ramo do Direito abrange a teoria geral da empresa, sociedades empresárias, títulos de crédito, contratos mercantis, propriedade intelectual, relação jurídica de consumo, relação concorrencial, locação empresarial, falência e recuperação de empresas.</p>
                                             </div>
                                             <!-- /.media-body -->
                                         </div>
@@ -275,8 +364,10 @@
                                                 <span class="icon bg3 flaticon-file24"></span>
                                             </a>
                                             <div class="media-body">
-                                                <h3 class="media-heading"><a href="#">Pro Services &amp; Advice</a></h3>
-                                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                                                <h3 class="media-heading"><a href="#">Direito do Consumidor</a></h3>
+                                                <p>O Direito do Consumidor é o ramo do direito que lida com as relações jurídicas entre fornecedores de bens e serviços e seus consumidores.</p>
+
+                                                <p>Tem por objetivo assegurar que os consumidores obtenham acesso a informações quanto a origem e qualidade dos produtos e serviços; assegurar proteção contra fraudes no mercado de consumo; garantir transparência a segurança para os usuários dos bens e serviços e harmonizar as relações consumo por meio da intervenção jurisdicional.</p>
                                             </div>
                                             <!-- /.media-body -->
                                         </div>
@@ -290,8 +381,9 @@
                                                 <span class="icon bg4 flaticon-royalty"></span>
                                             </a>
                                             <div class="media-body">
-                                                <h3 class="media-heading"><a href="#">Fresh business ideas</a></h3>
-                                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                                                <h3 class="media-heading"><a href="#">Direito Tributário</a></h3>
+                                                <p>Assessoria e planejamento tributário visando reduzir a carga tributária e obtenção de incentivos fiscais.</p>
+                                                <p>Consultoria sobre a interpretação da legislação tributária.</p>
                                             </div>
                                             <!-- /.media-body -->
                                         </div>
@@ -302,7 +394,244 @@
                                 <!-- /.row -->
                             </section>
 
-                            <section class="advantages-wrapper">
+                            <div class="container">
+                                <div class="content-wrapper">
+                                    <section class="about-us-wrapper">
+                                        <div class="row margin-bottom-60"> 
+                                            <div class="col-md-8">
+                                                <h2>Katarine de Castro Araujo</h2>
+                                                <p>Advogada, graduada pela Universidade Católica do Salvador (UCSAL).</p>
+            
+                                                <p>Pós graduado em Direito constitucional e previdenciário pela Fundação Faculdade Legale</p>
+                                                
+                                                <p>Delegada de Prerrogativas da OAB em Ruy Barbosa</p>
+            
+                                               <!-- <h2>Early Life</h2>
+                                                <p>Suspendisse molestie, massa a blandit cursus, est urna egestas dui, in aliquet risus enim sed leo. Ut at dignissim mauris. Ut pharetra augue velit, in sollicitudin metus rutrum eget. Nunc eget aliquam ipsum, ut scelerisque arcu. Mauris ultrices ante vel augue scelerisque, vitae bibendum enim elementum. Aenean at pretium quam. Maecenas lobortis condimentum enim, quis tempus nunc vestibulum vitae. In quis facilisis magna, ut vestibulum erat. Curabitur tempor sodales eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius eu eros in pretium. Praesent eget justo turpis. Aliquam sollicitudin consequat ligula, et euismod ipsum luctus id. Integer sagittisl pharetra nulla, eget.</p>
+            
+            
+                                                <h2>Work Experience</h2>
+                                                <p>Suspendisse molestie, massa a blandit cursus, est urna egestas dui, in aliquet risus enim sed leo. Ut at dignissim mauris. Ut pharetra augue velit, in sollicitudin metus rutrum eget. Nunc eget aliquam ipsum, ut scelerisque arcu. Mauris ultrices ante vel augue scelerisque, vitae bibendum enim elementum. Aenean at pretium quam. Maecenas lobortis condimentum enim, quis tempus nunc vestibulum vitae.</p>-->
+            
+                                            </div><!-- /.col-md-8 -->
+            
+                                            <div class="col-md-4">
+                                                <div class="info-in-short">
+                                                    <img class="img-responsive" src="img/team/tm1.jpg" alt="">
+                                                    
+            
+                                                    <div class="info-address">
+                                                        <h2>Informação de contato:</h2>
+                                                        <address>
+                                                            Email: <a href="katarinecastroucsal@outlook.com">email@me.com</a><br> 
+                                                            Celular: 71 9900-8129<br>
+                                                            Nascido em: 01 de novembro de 1995<br> 
+                                                           
+                                                        </address>
+                                                        <div class="social-link">
+                                                            <ul class="list-inline">
+                                                                <li><a title="Facebook" href="#" target="_blank"><i style="" class="fa fa-facebook "></i></a></li>
+                                                                <li><a title="Twitter" href="#" target="_blank"><i style="" class="fa fa-twitter "></i></a></li>
+                                                                <li><a title="Linkedin" href="#" target="_blank"><i style="" class="fa fa-linkedin "></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.col-md-4 -->
+                                        </div><!-- /.row -->
+                                    </section><!-- /.about-us-wrapper -->
+                                </div><!-- /.content-wrapper -->
+                            </div><!-- /.container -->
+
+                            <div class="container">
+                                <div class="content-wrapper">
+                                    <section class="about-us-wrapper">
+                                        <div class="row margin-bottom-60"> 
+                                            <div class="col-md-8">
+                                                <h2>Tiana Ribeiro</h2>
+                                                <p>Advogada, graduada pela Universidade Católica do Salvador (UCSAL).</p>
+            
+                                                <p>Pós graduado em Direito Tributário pela Faculdade Baiana de Direito</p>
+            
+            
+                                              <!--  <h2>Early Life</h2>
+                                                <p>Suspendisse molestie, massa a blandit cursus, est urna egestas dui, in aliquet risus enim sed leo. Ut at dignissim mauris. Ut pharetra augue velit, in sollicitudin metus rutrum eget. Nunc eget aliquam ipsum, ut scelerisque arcu. Mauris ultrices ante vel augue scelerisque, vitae bibendum enim elementum. Aenean at pretium quam. Maecenas lobortis condimentum enim, quis tempus nunc vestibulum vitae. In quis facilisis magna, ut vestibulum erat. Curabitur tempor sodales eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius eu eros in pretium. Praesent eget justo turpis. Aliquam sollicitudin consequat ligula, et euismod ipsum luctus id. Integer sagittisl pharetra nulla, eget.</p>
+            
+            
+                                                <h2>Work Experience</h2>
+                                                <p>Suspendisse molestie, massa a blandit cursus, est urna egestas dui, in aliquet risus enim sed leo. Ut at dignissim mauris. Ut pharetra augue velit, in sollicitudin metus rutrum eget. Nunc eget aliquam ipsum, ut scelerisque arcu. Mauris ultrices ante vel augue scelerisque, vitae bibendum enim elementum. Aenean at pretium quam. Maecenas lobortis condimentum enim, quis tempus nunc vestibulum vitae.</p>-->
+            
+                                            </div><!-- /.col-md-8 -->
+            
+                                            <div class="col-md-4">
+                                                <div class="info-in-short">
+                                                    <img class="img-responsive" src="img/team/tm10.jpg" alt="">
+                                                    
+            
+                                                    <div class="info-address">
+                                                        <h2>Informação de contato:</h2>
+                                                        <address>
+                                                            Email: <a href="ribeirocastrojurudico@gmail.com">email@me.com</a><br> 
+                                                            Celular: 71 99174-5503<br>
+                                                            Nascido em: 01 de novembro de 1995<br> 
+                                                           
+                                                        </address>
+                                                        <div class="social-link">
+                                                            <ul class="list-inline">
+                                                                <li><a title="Facebook" href="#" target="_blank"><i style="" class="fa fa-facebook "></i></a></li>
+                                                                <li><a title="Twitter" href="#" target="_blank"><i style="" class="fa fa-twitter "></i></a></li>
+                                                                <li><a title="Linkedin" href="#" target="_blank"><i style="" class="fa fa-linkedin "></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.col-md-4 -->
+                                        </div><!-- /.row -->
+                                    </section><!-- /.about-us-wrapper -->
+                                </div><!-- /.content-wrapper -->
+                            </div><!-- /.container -->
+
+                            <div class="container">
+                                <div class="content-wrapper">
+                                    <div class="inner-content">
+                                        <ul class="list-inline" id="filter">
+                                            <li><a class="active" data-group="all">All</a></li>
+                                            <li><a data-group="red">Red</a></li>
+                                            <li><a data-group="green">Green</a></li>
+                                            <li><a data-group="blue">Blue</a></li>
+                                            <li><a data-group="numbers">Numbers</a></li>
+                                            <li><a data-group="letters">Letters</a></li>
+                                            <li><a data-group="square">Squares</a></li>
+                                            <li><a data-group="circle">Circles</a></li>
+                                        </ul>
+                                        <div class="row four-column">
+                                            <div id="grid">
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "blue", "square"]'>
+                                                    <div class="single-portfolio">
+                                                        <img src="img/work/portfolio-13.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-1.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                        </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "green", "square"]'>
+                                                    <div class="single-portfolio">
+                                                        <img src="img/work/portfolio-15.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-2.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                          </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "letters", "blue", "square"]'>
+                                                    <div class="single-portfolio">
+                                                          <img src="img/work/portfolio-14.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-3.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                          </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "red", "square"]'>
+                                                    <div class="single-portfolio">
+                                                          <img src="img/work/portfolio-4.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-4.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                          </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "red", "circle"]'>
+                                                    <div class="single-portfolio">
+                                                          <img src="img/work/portfolio-5.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-5.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                          </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "red", "square"]'>
+                                                    <div class="single-portfolio">
+                                                          <img src="img/work/portfolio-6.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-6.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                          </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "green", "circle"]'>
+                                                    <div class="single-portfolio">
+                                                          <img src="img/work/portfolio-7.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-7.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                        </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "letters", "red", "square"]'>
+                                                    <div class="single-portfolio">
+                                                        <img src="img/work/portfolio-8.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-8.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                        </div><!-- /.links -->
+                                                    </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "green", "square"]'>
+                                                    <div class="single-portfolio">
+                                                        <img src="img/work/portfolio-9.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-9.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                        </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "letters", "green", "circle"]'>
+                                                    <div class="single-portfolio">
+                                                          <img src="img/work/portfolio-10.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-10.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                          </div><!-- /.links -->
+                                                      </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "numbers", "blue", "square"]'>
+                                                    <div class="single-portfolio">
+                                                          <img src="img/work/portfolio-11.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                              <a class="image-link" href="img/work/portfolio-11.jpg"><i class="fa fa-search-plus"></i></a>
+                                                             <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                        </div><!-- /.links -->
+                                                    </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+            
+                                                <div class="portfolio-item col-sm-6 col-md-3" data-groups='["all", "letters", "red", "square"]'>
+                                                    <div class="single-portfolio">
+                                                        <img src="img/work/portfolio-12.jpg" alt="">
+                                                        <div class="portfolio-links">
+                                                            <a class="image-link" href="img/work/portfolio-12.jpg"><i class="fa fa-search-plus"></i></a>
+                                                            <a href="portfolio-single.html"><i class="fa fa-link"></i></a>
+                                                        </div><!-- /.links -->
+                                                  </div><!-- /.single-portfolio -->
+                                                </div><!-- /.portfolio-item -->
+                                            </div><!-- /#grid -->
+                                        </div><!-- /.row -->
+                                    </div><!-- /.inner-content -->
+                                </div><!-- /.content-wrapper -->
+                            </div><!-- /.container -->
+
+                            <section class="advantages-wrapper" style="display: none;">
                                 <h2 class="section-title wow fadeInDown">Our advantages</h2>
                                 <div class="css-tab text-center">
                                     <!-- Nav tabs -->
@@ -437,7 +766,7 @@
                                 <!-- /.css-tab -->
                             </section>
 
-                            <section class="handover-wrapper">
+                            <section class="handover-wrapper" style="display: none;">
                                 <h2 class="section-title wow fadeInDown">Our Handover Project</h2>
                                 <div id="css-handover-carousel" class="carousel slide" data-ride="carousel">
                                     <!-- Indicators -->
@@ -554,8 +883,112 @@
                                 <!-- /.carousel -->
                             </section>
 
+                            <div class="container">
+                                <div class="content-wrapper">
+                                    <div class="contact-us-wrapper">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="mini-contact">
+                                                    <h2>Email us</h2>
+                                                    <p>If you're encountering an issue or problem when working with primex you can always email us directly or via the form below</p>
+            
+                                                    <a href="mailto:#">uicookies@gmail.com</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mini-contact">
+                                                    <h2>Call us</h2>
+                                                    <p>If you're encountering an issue or problem when working with primex you can always email us directly or via the form below</p>
+            
+                                                    <a href="#">call (800) 123 1234</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mini-contact">
+                                                    <h2>Tweet us</h2>
+                                                    <p>If you're encountering an issue or problem when working with primex you can always email us directly or via the form below</p>
+            
+                                                    <a href="https://twitter.com/themehippo">Tweet us →</a>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.row -->
+            
+            
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="map-wrapper">
+                                                    <div id="mapCanvas" class="map-canvas"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mini-contact">
+                                                    <h2>Visit us</h2>
+                                                    <address>
+                                                        795 Folsom Ave, Suite 600 <br>
+                                                        San Francisco, CA 94107
+                                                    </address>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.row -->
+            
+            
+                                      
+            
+                                        <div class="contact-us-form">
+            
+                                            <h2>Drop us a line</h2>
+            
+            
+                                            <form id="contactForm" action="sendemail.php" method="POST">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                      <div class="input-group">
+                                                        <label class="sr-only" for="name">Name</label>
+                                                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                                        <input id="name" name="name" type="text" class="form-control"  required="" placeholder="Name">
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <div class="input-group">
+                                                        <label class="sr-only" for="email">Email address</label>
+                                                        <span class="input-group-addon" id="basic-addon2"><i class="fa fa-envelope"></i></span>
+                                                        <input id="email" name="email" type="email" class="form-control" required="" placeholder="Email">
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                      <div class="input-group">
+                                                        <label class="sr-only" for="phone">Phone</label>
+                                                        <span class="input-group-addon" id="basic-addon3"><i class="fa fa-phone"></i></span>
+                                                        <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone">
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <div class="input-group">
+                                                        <label class="sr-only" for="subject">Subject</label>
+                                                        <span class="input-group-addon" id="basic-addon4"><i class="fa fa-file-text"></i></span>
+                                                        <input id="subject" name="subject" type="text" class="form-control" required="" placeholder="Subject">
+                                                      </div>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="input-group text-area">
+                                                    <label class="sr-only" for="message">Message</label>
+                                                    <span class="input-group-addon" id="basic-addon5"><i class="fa fa-file-text-o"></i></span>
+                                                    <textarea id="message" name="message" class="form-control" rows="6" required="" placeholder="Message"></textarea>
+                                                </div>
+            
+                                                <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                                            </form>
+                                        </div>
+            
+                                    </div><!-- /.content-wrapper -->
+                                </div><!-- /.content-wrapper -->
+                            </div><!-- /.container -->
 
-                            <section class="testimonial-wrapper">
+
+                            <section class="testimonial-wrapper" style="display: none;">
                                 <h2 class="section-title wow fadeInDown">What our Clients Say</h2>
                                 <div id="css-testimonial-carousel" class="carousel slide" data-ride="carousel">
                                     <!-- Indicators -->
@@ -638,7 +1071,7 @@
                             <!-- /.testimonial-wrapper -->
 
 
-                            <section class="trusted-client-wrapper">
+                            <section class="trusted-client-wrapper" style="display: none;">
                                 <h2 class="section-title wow fadeInDown">We are Trusted by</h2>
                                 <ul class="partner-logo">
                                     <li class="wow zoomIn">
@@ -671,7 +1104,7 @@
                                 </ul>
                             </section>
 
-                            <section class="subscription-wrapper text-center">
+                            <section class="subscription-wrapper text-center" style="display: none;">
                                 <h2 class="wow fadeInDown">Take into our subscription plans</h2>
                                 <h3 class="pricing-sub wow fadeInDown">Choose the one which fits your organization (don't worry, you will be able to upgrade <br> or downgrade or cancel it anytime)</h3>
 
@@ -734,7 +1167,7 @@
                                 <!-- /.row -->
                             </section>
 
-                            <section class="support-wrapper">
+                            <section class="support-wrapper" style="display: none;">
                                 <div class="row">
                                     <div class="col-lg-8 col-lg-offset-1">
                                         <h2 class="wow fadeInDown">We have 24/7 dedicated support team</h2>
